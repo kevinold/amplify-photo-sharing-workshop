@@ -1,17 +1,15 @@
-import React from 'react';
-import { css } from 'emotion';
+import React from "react";
+import { css } from "emotion";
 
-export default function Button({
-  title, onClick, type = "action"
-}) {
+export default function Button({ title, onClick, type = "action", dataTestLabel }) {
   return (
-    <button className={buttonStyle(type)} onClick={onClick}>
-      { title }
+    <button data-test={dataTestLabel} className={buttonStyle(type)} onClick={onClick}>
+      {title}
     </button>
-  )
+  );
 }
 
-const buttonStyle = type => css`
+const buttonStyle = (type) => css`
   background-color: ${type === "action" ? "black" : "red"};
   height: 40px;
   width: 160px;
@@ -25,4 +23,4 @@ const buttonStyle = type => css`
   :hover {
     background-color: #363636;
   }
-`
+`;
