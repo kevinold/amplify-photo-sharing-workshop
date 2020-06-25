@@ -8,18 +8,26 @@
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
     "aws-amplify": "^3.0.10",
+    "aws-sdk": "^2.705.0",
+    "cypress": "^4.9.0",
     "emotion": "^10.0.27",
+    "node-fetch": "^2.6.0",
+    "prettier": "^2.0.5",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.1",
+    "typescript": "^3.9.5",
     "uuid": "^8.0.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "prebuild": "npm run build:aws-exports-es5",
+    "prestart": "npm run build:aws-exports-es5",
+    "build:aws-exports-es5": "tsc --skipLibCheck --allowJs --lib 'es5' --module 'commonjs' --target 'es5' --moduleResolution 'node' --outDir . src/aws-exports.js"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -35,5 +43,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "prettier": {
+    "trailingComma": "es5",
+    "printWidth": 100
   }
 }
