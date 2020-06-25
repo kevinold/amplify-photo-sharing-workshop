@@ -10,6 +10,8 @@ export const getPost = /* GraphQL */ `
       description
       image
       username
+      createdAt
+      updatedAt
     }
   }
 `;
@@ -27,6 +29,8 @@ export const listPosts = /* GraphQL */ `
         description
         image
         username
+        createdAt
+        updatedAt
       }
       nextToken
     }
