@@ -5,6 +5,18 @@ Cypress.Commands.add("getBySelLike", (selector, ...args) =>
   cy.get(`[data-test*=${selector}]`, ...args)
 );
 
+// Reference
+// https://www.matthewburfield.com/cypress-end-to-end-tests-on-amplify-deploy-pipeline/
+/*Cypress.Commands.add("loginToCognito", (username, password) => {
+  cy.visit("/")
+    .get("[data-test=username-input]")
+    .type(username)
+    .get("[data-test=sign-in-password-input]")
+    .type(password)
+    .get("[data-test=sign-in-sign-in-button]")
+    .click();
+});*/
+
 Cypress.Commands.add("loginWithCognitoByApi", (username, password) =>
   cy
     .task("loginCognitoUserByApi", {
